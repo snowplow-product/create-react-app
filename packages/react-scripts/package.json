@@ -1,5 +1,5 @@
 {
-  "name": "@snowplow-product/react-scripts",
+  "name": "react-scripts",
   "version": "4.0.1",
   "description": "Configuration and scripts for Create React App.",
   "repository": {

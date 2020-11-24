@@ -31,6 +31,9 @@ module.exports = babelJest.createTransformer({
       },
     ],
   ],
+  transformIgnorePatterns: [
+    'node_modules/(?!monaco-editor|fp-ts|io-ts|monocle-ts).+\\.js$',
+  ],
   babelrc: false,
   configFile: false,
 });

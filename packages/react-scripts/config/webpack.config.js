@@ -27,6 +27,7 @@ const WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeM
 const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
 const getCSSModuleLocalIdent = require('react-dev-utils/getCSSModuleLocalIdent');
 const ESLintPlugin = require('eslint-webpack-plugin');
+const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin')
 const paths = require('./paths');
 const modules = require('./modules');
 const getClientEnvironment = require('./env');
@@ -778,6 +779,52 @@ module.exports = function (webpackEnv) {
             },
           },
         }),
+      new MonacoWebpackPlugin({
+        languages: ['javascript', 'json', 'html'],
+        features: [
+          '!accessibilityHelp',
+          '!bracketMatching',
+          '!caretOperations',
+          '!clipboard',
+          '!codeAction',
+          '!codelens',
+          'colorDetector',
+          '!comment',
+          '!contextmenu',
+          'coreCommands',
+          '!cursorUndo',
+          '!dnd',
+          '!find',
+          'folding',
+          '!fontZoom',
+          'format',
+          '!goToDefinitionCommands',
+          '!goToDefinitionMouse',
+          '!gotoError',
+          '!gotoLine',
+          'hover',
+          '!inPlaceReplace',
+          '!inspectTokens',
+          '!iPadShowKeyboard',
+          'linesOperations',
+          'links',
+          'multicursor',
+          '!parameterHints',
+          'quickCommand',
+          'quickOutline',
+          '!referenceSearch',
+          'rename',
+          'smartSelect',
+          '!snippets',
+          '!suggest',
+          '!toggleHighContrast',
+          'toggleTabFocusMode',
+          'transpose',
+          'wordHighlighter',
+          'wordOperations',
+          'wordPartOperations',
+        ],
+      }),
     ].filter(Boolean),
     // Some libraries import Node modules but don't use them in the browser.
     // Tell webpack to provide empty mocks for them so importing them works.

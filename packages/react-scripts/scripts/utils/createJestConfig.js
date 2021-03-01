@@ -31,6 +31,7 @@ module.exports = (resolve, rootDir, isEjecting) => {
       isEjecting
         ? 'react-app-polyfill/jsdom'
         : require.resolve('react-app-polyfill/jsdom'),
+      'jest-canvas-mock',
     ],
 
     setupFilesAfterEnv: setupTestsFile ? [setupTestsFile] : [],
